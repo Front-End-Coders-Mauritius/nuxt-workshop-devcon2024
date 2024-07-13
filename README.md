@@ -11,4 +11,3 @@
 ## Open in CodeSandbox
 
 [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/Front-End-Coders-Mauritius/nuxt-workshop-devcon2024)
-https://codesandbox.io/p/sandbox/github/nuxt/starter/tree/v3/
