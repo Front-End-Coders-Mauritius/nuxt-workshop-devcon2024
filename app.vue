@@ -1,9 +1,7 @@
 <template>
-  <div class="bg-green-500">
-    Congratulations ! You have successfully created your first Nuxt App
-
-    {{ today }}
-  </div>
+    <Layout>
+      {{ data }}
+    </Layout>
 </template>
 
 <script setup lang="ts">
@@ -19,26 +17,33 @@ async function fetchJson(url = API_ENDPOINT) {
   }
 }
 
-function startOfDay(date) {
-  const x = new Date(date)
-  x.setHours(0, 0, 0, 0)
-  return x
-}
+// function startOfDay(date) {
+//   const x = new Date(date)
+//   x.setHours(0, 0, 0, 0)
+//   return x
+// }
 
-function filterByToday  (dataset) {
-  console.log(dataset.length)
-  if ((dataset.length === 0) || (typeof dataset === undefined )) return []
-  const x = startOfDay(new Date()).getTime()
+// function filterByToday  (dataset) {
+//   console.log(dataset.length)
+//   if ((dataset.length === 0) || (typeof dataset === undefined )) return []
+//   const x = startOfDay(new Date()).getTime()
 
-  return dataset.filter((record) => {
-    const startOfThatDay = startOfDay(new Date(record.from)).getTime()
-    return x === startOfThatDay
-  })
-}
+//   return dataset.filter((record) => {
+//     const startOfThatDay = startOfDay(new Date(record.from)).getTime()
+//     return x === startOfThatDay
+//   })
+// }
 
 
 
 const data = await fetchJson()
-const today = computed(() => filterByToday(data))
+// const today = computed(() => filterByToday(data))
 
 </script>
+
+
+<style>
+main {
+  min-height: 100vh;
+}
+</style>
